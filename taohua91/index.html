@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桃花91-桃花91热门内容合集_桃花91黑料吃瓜爆料</title>
+<meta name="description" content="桃花91是一个聚合热门吃瓜与黑料爆料的浏览站点，本页汇总桃花91上常见的热点话题、爆料分类与近期讨论，方便访问者快速找到想看的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f7e8ef'/%3E%3Cg fill='%23d94f7a'%3E%3Ccircle cx='32' cy='22' r='7'/%3E%3Ccircle cx='21' cy='32' r='7'/%3E%3Ccircle cx='43' cy='32' r='7'/%3E%3Ccircle cx='26' cy='43' r='7'/%3E%3Ccircle cx='38' cy='43' r='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4' fill='%23fff3c4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241a20;
+  --ink-soft:#5c4a53;
+  --rose:#d94f7a;
+  --rose-deep:#a83259;
+  --blush:#fbeef3;
+  --cream:#fffaf6;
+  --gold:#e0a83c;
+  --line:#f0dde5;
+  --radius:18px;
+  --max:1120px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 520px at 88% -8%, #fde4ee 0%, rgba(253,228,238,0) 62%),
+    radial-gradient(900px 480px at -6% 4%, #fff4e2 0%, rgba(255,244,226,0) 58%),
+    var(--cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 22px;}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,250,246,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.bar{
+  display:flex;align-items:center;gap:18px;
+  min-height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.logo .mark{width:36px;height:36px;flex:0 0 36px;}
+.logo .brand{
+  font-size:20px;font-weight:800;letter-spacing:.5px;
+  color:var(--rose-deep);
+  white-space:nowrap;
+}
+nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+nav.main a{
+  font-size:14.5px;color:var(--ink-soft);font-weight:600;
+  padding:7px 12px;border-radius:999px;transition:.2s;
+  white-space:nowrap;
+}
+nav.main a:hover,nav.main a:focus-visible{background:var(--blush);color:var(--rose-deep);}
+nav.main a.cta{
+  background:var(--rose);color:#fff;
+}
+nav.main a.cta:hover{background:var(--rose-deep);color:#fff;}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:54px 0 40px;
+  position:relative;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:1.4px;
+  color:var(--rose-deep);background:var(--blush);
+  padding:5px 14px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);}
+h1{
+  font-size:clamp(34px,5.6vw,58px);
+  line-height:1.12;margin:0 0 18px;
+  font-weight:900;letter-spacing:-.5px;
+  color:var(--ink);
+}
+h1 .hl{
+  background:linear-gradient(180deg,transparent 62%, #ffd6e5 62%);
+  padding:0 4px;
+}
+.lede{
+  font-size:16.5px;color:var(--ink-soft);max-width:34em;margin:0 0 26px;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;
+  font-size:15px;font-weight:700;border:1.5px solid transparent;
+  transition:.2s;cursor:pointer;
+}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 10px 24px -10px rgba(217,79,122,.85);}
+.btn-primary:hover{background:var(--rose-deep);transform:translateY(-1px);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--rose-deep);}
+.btn-ghost:hover{border-color:var(--rose);background:var(--blush);}
+.btn[aria-disabled="true"]{
+  pointer-events:none;opacity:.62;
+}
+.hero-art{
+  position:relative;
+  border-radius:26px;
+  background:linear-gradient(160deg,#fff6f1,#fbe3ee 62%,#f8d9e6);
+  border:1px solid var(--line);
+  padding:18px;
+  box-shadow:0 20px 44px -28px rgba(168,50,89,.5);
+}
+.hero-art svg{width:100%;height:auto;border-radius:16px;}
+.hero-art .tag{
+  position:absolute;bottom:14px;left:14px;
+  background:#fff;border:1px solid var(--line);
+  font-size:12.5px;font-weight:700;color:var(--rose-deep);
+  padding:5px 12px;border-radius:999px;
+}
+
+/* ---------- section base ---------- */
+section{padding:44px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-head h2{
+  font-size:clamp(22px,3vw,29px);
+  margin:0 0 8px;font-weight:800;letter-spacing:-.2px;
+}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15px;max-width:46em;}
+.kicker{
+  font-size:12.5px;font-weight:800;letter-spacing:2px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:8px;
+}
+
+/* ---------- stats strip ---------- */
+.strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;margin-top:34px;
+}
+.strip div{text-align:center;}
+.strip .n{font-size:24px;font-weight:900;color:var(--rose-deep);line-height:1.2;}
+.strip .t{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:10px;
+  transition:.22s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -26px rgba(168,50,89,.55);border-color:#f6c6d8;}
+.card .ico{
+  width:42px;height:42px;border-radius:12px;background:var(--blush);
+  display:grid;place-items:center;margin-bottom:2px;
+}
+.card h3{margin:0;font-size:17.5px;font-weight:800;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+.card .meta{
+  margin-top:auto;font-size:12.5px;color:var(--rose-deep);font-weight:700;
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+}
+.pill{
+  font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;
+  background:var(--blush);color:var(--rose-deep);
+}
+.pill.gold{background:#fdf1d8;color:#9a6a12;}
+
+/* ---------- feed list ---------- */
+.feed{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.feed-item{
+  display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+  padding:18px 22px;border-bottom:1px solid var(--line);
+}
+.feed-item:last-child{border-bottom:none;}
+.feed-item:hover{background:#fffafc;}
+.feed-item .num{
+  font-size:20px;font-weight:900;color:#f2c2d3;font-variant-numeric:tabular-nums;
+}
+.feed-item .tt{font-size:16px;font-weight:700;margin:0 0 2px;}
+.feed-item .tt a:hover{color:var(--rose-deep);}
+.feed-item .dd{margin:0;font-size:13.5px;color:var(--ink-soft);}
+.feed-item .r{font-size:12.5px;color:var(--ink-soft);white-space:nowrap;text-align:right;}
+
+/* ---------- search + filter ---------- */
+.toolbar{
+  display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:14px 16px;margin-bottom:18px;
+}
+.toolbar input[type="search"]{
+  flex:1 1 220px;min-width:0;
+  border:1.5px solid var(--line);border-radius:10px;
+  padding:10px 14px;font-size:14.5px;font-family:inherit;
+  background:var(--cream);color:var(--ink);
+}
+.toolbar input[type="search"]:focus{outline:none;border-color:var(--rose);background:#fff;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;
+  border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);
+  cursor:pointer;font-family:inherit;transition:.18s;
+}
+.chip:hover{border-color:var(--rose);color:var(--rose-deep);}
+.chip[aria-pressed="true"]{background:var(--rose);border-color:var(--rose);color:#fff;}
+.empty{
+  display:none;text-align:center;color:var(--ink-soft);
+  font-size:14px;padding:26px 10px;
+}
+
+/* ---------- article block ---------- */
+.article{
+  display:grid;grid-template-columns:1.4fr .6fr;gap:30px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;
+}
+.article h3{font-size:19px;margin:0 0 10px;font-weight:800;}
+.article p{font-size:15px;color:var(--ink-soft);margin:0 0 14px;}
+.article p:last-child{margin-bottom:0;}
+.side{
+  border-left:1px dashed var(--line);padding-left:26px;
+}
+.side h4{font-size:14px;margin:0 0 12px;letter-spacing:1px;color:var(--rose-deep);}
+.side ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.side li{font-size:14px;color:var(--ink-soft);display:flex;gap:8px;}
+.side li b{color:var(--ink);font-weight:700;}
+
+/* ---------- notice ---------- */
+.notice{
+  margin-top:18px;font-size:13.5px;color:var(--ink-soft);
+  background:#fff8ec;border:1px solid #f7e5c4;border-radius:14px;
+  padding:14px 18px;
+}
+.notice strong{color:#9a6a12;}
+
+/* ---------- footer ---------- */
+footer.site{
+  margin-top:26px;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(251,238,243,0),#fdf2f7);
+  padding:34px 0 40px;
+}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:26px;}
+.foot-grid h5{font-size:13.5px;margin:0 0 10px;color:var(--rose-deep);letter-spacing:.5px;}
+.foot-grid a{font-size:14px;color:var(--ink-soft);display:block;padding:3px 0;}
+.foot-grid a:hover{color:var(--rose-deep);}
+.foot-grid p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+.copy{
+  margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:12.5px;color:#9b8791;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-art{order:-1;max-width:460px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .article{grid-template-columns:1fr;}
+  .side{border-left:none;border-top:1px dashed var(--line);padding-left:0;padding-top:20px;}
+  .strip{grid-template-columns:1fr 1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px;}
+  .bar{flex-wrap:wrap;padding:10px 0;gap:10px;}
+  nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+  nav.main a{padding:6px 11px;font-size:14px;}
+  .hero{padding:30px 0 22px;}
+  .cards{grid-template-columns:1fr;}
+  .feed-item{grid-template-columns:38px 1fr;row-gap:4px;padding:15px 16px;}
+  .feed-item .r{grid-column:2;text-align:left;}
+  .article{padding:22px;}
+  .strip{padding:16px;gap:10px;}
+  .foot-grid{grid-template-columns:1fr;}
+  section{padding:32px 0;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none!important;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="桃花91 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="31" fill="#fbeef3"/>
+        <g fill="#d94f7a">
+          <circle cx="32" cy="21" r="7.5"/>
+          <circle cx="20" cy="32" r="7.5"/>
+          <circle cx="44" cy="32" r="7.5"/>
+          <circle cx="25.5" cy="44" r="7.5"/>
+          <circle cx="38.5" cy="44" r="7.5"/>
+        </g>
+        <circle cx="32" cy="32" r="4.5" fill="#fff3c4"/>
+      </svg>
+      <span class="brand">桃花91</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#topics">热门话题</a>
+      <a href="#feed">爆料速览</a>
+      <a href="#find">分类查找</a>
+      <a href="#about">站点说明</a>
+      <a class="cta" href="#find">开始浏览</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>热点聚合 · 吃瓜浏览</span>
+          <h1>桃花91</h1>
+          <p class="lede">桃花91 是一个把网络热门话题与吃瓜爆料集中到一处的浏览站点。这里按话题归类近期讨论，把零散的帖子、评论与传播线索整理成可读的条目，方便你按兴趣快速翻看，而不是在多个页面之间来回跳转。</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#topics">浏览热门话题
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#feed">查看爆料速览</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <svg viewBox="0 0 420 320" role="img" aria-label="桃花与话题气泡的插画">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fff7f2"/>
+                <stop offset="1" stop-color="#f9dbe8"/>
+              </linearGradient>
+              <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f17ba1"/>
+                <stop offset="1" stop-color="#d94f7a"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="420" height="320" rx="18" fill="url(#sky)"/>
+            <g opacity=".55" fill="#fff">
+              <circle cx="66" cy="58" r="26"/><circle cx="104" cy="46" r="17"/>
+              <circle cx="352" cy="72" r="22"/><circle cx="322" cy="52" r="14"/>
+            </g>
+            <!-- branch -->
+            <path d="M-10 250 C90 220, 150 214, 232 176 C296 146, 342 132, 424 118" stroke="#b98a6a" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <path d="M150 214 C176 190, 196 176, 226 168" stroke="#b98a6a" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- blossoms -->
+            <g>
+              <g transform="translate(96,222) scale(.9)">
+                <g fill="url(#petal)">
+                  <ellipse cx="0" cy="-13" rx="9" ry="12"/>
+                  <ellipse cx="12" cy="-4" rx="9" ry="12" transform="rotate(72 12 -4)"/>
+                  <ellipse cx="8" cy="11" rx="9" ry="12" transform="rotate(144 8 11)"/>
+                  <ellipse cx="-8" cy="11" rx="9" ry="12" transform="rotate(216 -8 11)"/>
+                  <ellipse cx="-12" cy="-4" rx="9" ry="12" transform="rotate(288 -12 -4)"/>
+                </g>
+                <circle cx="0" cy="0" r="4.5" fill="#fff3c4"/>
+              </g>
+              <g transform="translate(186,186) scale(.75)">
+                <g fill="url(#petal)">
+                  <ellipse cx="0" cy="-13" rx="9" ry="12"/>
+                  <ellipse cx="12" cy="-4" rx="9" ry="12" transform="rotate(72 12 -4)"/>
+                  <ellipse cx="8" cy="11" rx="9" ry="12" transform="rotate(144 8 11)"/>
+                  <ellipse cx="-8" cy="11" rx="9" ry="12" transform="rotate(216 -8 11)"/>
+                  <ellipse cx="-12" cy="-4" rx="9" ry="12" transform="rotate(288 -12 -4)"/>
+                </g>
+                <circle cx="0" cy="0" r="4.5" fill="#fff3c4"/>
+              </g>
+              <g transform="translate(266,152) scale(1.05)">
+                <g fill="url(#petal)">
+                  <ellipse cx="0" cy="-13" rx="9" ry="12"/>
+                  <ellipse cx="12" cy="-4" rx="9" ry="12" transform="rotate(72 12 -4)"/>
+                  <ellipse cx="8" cy="11" rx="9" ry="12" transform="rotate(144 8 11)"/>
+                  <ellipse cx="-8" cy="11" rx="9" ry="12" transform="rotate(216 -8 11)"/>
+                  <ellipse cx="-12" cy="-4" rx="9" ry="12" transform="rotate(288 -12 -4)"/>
+                </g>
+                <circle cx="0" cy="0" r="4.5" fill="#fff3c4"/>
+              </g>
+              <g transform="translate(348,134) scale(.7)">
+                <g fill="url(#petal)">
+                  <ellipse cx="0" cy="-13" rx="9" ry="12"/>
+                  <ellipse cx="12" cy="-4" rx="9" ry="12" transform="rotate(72 12 -4)"/>
+                  <ellipse cx="8" cy="11" rx="9" ry="12" transform="rotate(144 8 11)"/>
+                  <ellipse cx="-8" cy="11" rx="9" ry="12" transform="rotate(216 -8 11)"/>
+                  <ellipse cx="-12" cy="-4" rx="9" ry="12" transform="rotate(288 -12 -4)"/>
+                </g>
+                <circle cx="0" cy="0" r="4.5" fill="#fff3c4"/>
+              </g>
+            </g>
+            <!-- floating bubbles -->
+            <g>
+              <rect x="46" y="122" width="118" height="40" rx="20" fill="#fff"/>
+              <circle cx="72" cy="142" r="7" fill="#f4b9cd"/>
+              <rect x="86" y="134" width="58" height="6" rx="3" fill="#e9d3dc"/>
+              <rect x="86" y="146" width="38" height="6" rx="3" fill="#f3e3ea"/>
+            </g>
+            <g>
+              <rect x="246" y="216" width="128" height="44" rx="22" fill="#fff"/>
+              <circle cx="272" cy="238" r="7" fill="#f0c983"/>
+              <rect x="288" y="229" width="66" height="6" rx="3" fill="#e9d3dc"/>
+              <rect x="288" y="241" width="44" height="6" rx="3" fill="#f3e3ea"/>
+            </g>
+            <!-- hearts -->
+            <g fill="#f4b9cd">
+              <path d="M120 92c-4-6-14-4-14 4 0 7 14 15 14 15s14-8 14-15c0-8-10-10-14-4z"/>
+              <path d="M330 176c-3-5-11-3-11 3 0 5 11 12 11 12s11-7 11-12c0-6-8-8-11-3z" opacity=".8"/>
+            </g>
+          </svg>
+          <span class="tag">话题 · 爆料 · 讨论</span>
+        </div>
+      </div>
+
+      <div class="strip" aria-label="站点概况">
+        <div><div class="n">6</div><div class="t">话题大类</div></div>
+        <div><div class="n">每日</div><div class="t">内容更新</div></div>
+        <div><div class="n">按热度</div><div class="t">条目排序</div></div>
+        <div><div class="n">移动端</div><div class="t">适配浏览</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Topics</div>
+        <h2>桃花91 热门话题分区</h2>
+        <p>吃瓜内容往往成串出现：一条爆料带出评论，一段评论又引出新的讨论。桃花91 把这些线索按类型归拢，先看大类，再进入具体条目。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H9l-5 4V5z" stroke="#d94f7a" stroke-width="1.9" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>圈内话题</h3>
+          <p>围绕公开讨论度较高的圈内人物与事件，按时间线排列相关帖子的要点，方便对照前后说法。</p>
+          <div class="meta"><span class="pill">讨论集中</span><span>更新频繁</span></div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6L21 9.6l-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.4-1z" stroke="#d94f7a" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>热点吃瓜</h3>
+          <p>短周期内传播较快的瓜，先从截图与转述里挑出可核对的部分，再标注哪些仍是单方说法。</p>
+          <div class="meta"><span class="pill gold">传播快</span><span>需自行判断</span></div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="#d94f7a" stroke-width="1.9"/><path d="M16 16l4.5 4.5" stroke="#d94f7a" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <h3>线索梳理</h3>
+          <p>把同一事件下散落的发言、时间点与后续回应排成一条线，看哪些说法前后一致、哪些相互冲突。</p>
+          <div class="meta"><span class="pill">时间线</span><span>对照阅读</span></div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#d94f7a" stroke-width="1.9"/><path d="M8 9h8M8 13h5" stroke="#d94f7a" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <h3>黑料合集</h3>
+          <p>按人物或事件归档已被大量转述的内容，页面只做归纳呈现，不对其中细节作真伪背书。</p>
+          <div class="meta"><span class="pill">归档</span><span>谨慎阅读</span></div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z" stroke="#d94f7a" stroke-width="1.9" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>网友反应</h3>
+          <p>评论区里常见的几种立场与反问，摘出有代表性的表达，帮助理解一个话题为何持续发酵。</p>
+          <div class="meta"><span class="pill">观点</span><span>多元视角</span></div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V9M12 19V5M19 19v-7" stroke="#d94f7a" stroke-width="2.1" stroke-linecap="round"/></svg>
+          </div>
+          <h3>热度观察</h3>
+          <p>记录一个话题从出现到降温的大致过程，标注讨论量变化明显的节点，作为浏览顺序的参考。</p>
+          <div class="meta"><span class="pill">趋势</span><span>过程记录</span></div>
+        </article>
+      </div>
+      <p class="notice"><strong>阅读提示：</strong>本站内容来自公开网络讨论的归纳，属于吃瓜与黑料爆料语境，不代表对任何个人或事件的定性。看到具体说法时，建议回到原始出处核对时间与上下文。</p>
+    </div>
+  </section>
+
+  <!-- FEED -->
+  <section id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Feed</div>
+        <h2>桃花91 爆料速览</h2>
+        <p>按热度与更新时间混合排列的条目列表，每条给出一句话摘要，点开可继续看该话题下的讨论脉络。</p>
+      </div>
+      <div class="feed" id="feedList">
+        <div class="feed-item" data-cat="圈内话题">
+          <div class="num">01</div>
+          <div>
+            <p class="tt"><a href="#find">某综艺嘉宾言论引发二次讨论</a></p>
+            <p class="dd">节目片段被截取传播，评论区出现两种解读，后续当事人账号有简短回应。</p>
+          </div>
+          <div class="r">圈内话题 · 今日</div>
+        </div>
+        <div class="feed-item" data-cat="热点吃瓜">
+          <div class="num">02</div>
+          <div>
+            <p class="tt"><a href="#find">合作方声明与网络传言对不上</a></p>
+            <p class="dd">声明发布时间早于传言扩散，时间线被整理后讨论方向出现变化。</p>
+          </div>
+          <div class="r">热点吃瓜 · 今日</div>
+        </div>
+        <div class="feed-item" data-cat="线索梳理">
+          <div class="num">03</div>
+          <div>
+            <p class="tt"><a href="#find">旧帖被重新翻出，说法前后有别</a></p>
+            <p class="dd">同一账号两年前的表述与近期内容存在差异，被网友并列对比。</p>
+          </div>
+          <div class="r">线索梳理 · 昨日</div>
+        </div>
+        <div class="feed-item" data-cat="黑料合集">
+          <div class="num">04</div>
+          <div>
+            <p class="tt"><a href="#find">多段聊天截图流出，真伪待辨</a></p>
+            <p class="dd">截图来源分散，部分界面细节被指出不一致，讨论集中在可信度上。</p>
+          </div>
+          <div class="r">黑料合集 · 昨日</div>
+        </div>
+        <div class="feed-item" data-cat="网友反应">
+          <div class="num">05</div>
+          <div>
+            <p class="tt"><a href="#find">评论区出现集体追问</a></p>
+            <p class="dd">话题下方高赞评论多要求给出完整经过，而非片段式转述。</p>
+          </div>
+          <div class="r">网友反应 · 近三日</div>
+        </div>
+        <div class="feed-item" data-cat="热度观察">
+          <div class="num">06</div>
+          <div>
+            <p class="tt"><a href="#find">热度在澄清后回落</a></p>
+            <p class="dd">一条补充说明发布后，新增讨论明显减少，旧条目仍被持续引用。</p>
+          </div>
+          <div class="r">热度观察 · 近三日</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND -->
+  <section id="find">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Find</div>
+        <h2>在桃花91 里按关键词找话题</h2>
+        <p>输入人物、事件或栏目名称，下方条目会即时筛选；也可以直接点分类标签，把范围缩小到某一类吃瓜内容。</p>
+      </div>
+      <div class="toolbar">
+        <label for="q" class="visually-hidden" style="position:absolute;left:-9999px">搜索话题</label>
+        <input id="q" type="search" placeholder="输入关键词，如：声明、截图、综艺……" autocomplete="off">
+        <div class="chips" role="group" aria-label="分类筛选">
+          <button class="chip" type="button" data-filter="全部" aria-pressed="true">全部</button>
+          <button class="chip" type="button" data-filter="圈内话题" aria-pressed="false">圈内话题</button>
+          <button class="chip" type="button" data-filter="热点吃瓜" aria-pressed="false">热点吃瓜</button>
+          <button class="chip" type="button" data-filter="线索梳理" aria-pressed="false">线索梳理</button>
+          <button class="chip" type="button" data-filter="黑料合集" aria-pressed="false">黑料合集</button>
+          <button class="chip" type="button" data-filter="网友反应" aria-pressed="false">网友反应</button>
+          <button class="chip" type="button" data-filter="热度观察" aria-pressed="false">热度观察</button>
+        </div>
+      </div>
+      <div class="feed" id="resultList" aria-live="polite">
+        <div class="feed-item" data-cat="圈内话题">
+          <div class="num">01</div>
+          <div><p class="tt"><a href="#feed">某综艺嘉宾言论引发二次讨论</a></p><p class="dd">圈内话题 · 节目片段传播后出现两种解读。</p></div>
+          <div class="r">今日</div>
+        </div>
+        <div class="feed-item" data-cat="热点吃瓜">
+          <div class="num">02</div>
+          <div><p class="tt"><a href="#feed">合作方声明与网络传言对不上</a></p><p class="dd">热点吃瓜 · 声明时间早于传言扩散。</p></div>
+          <div class="r">今日</div>
+        </div>
+        <div class="feed-item" data-cat="线索梳理">
+          <div class="num">03</div>
+          <div><p class="tt"><a href="#feed">旧帖被重新翻出，说法前后有别</a></p><p class="dd">线索梳理 · 同一账号前后表述并列对比。</p></div>
+          <div class="r">昨日</div>
+        </div>
+        <div class="feed-item" data-cat="黑料合集">
+          <div class="num">04</div>
+          <div><p class="tt"><a href="#feed">多段聊天截图流出，真伪待辨</a></p><p class="dd">黑料合集 · 截图来源分散，细节存在争议。</p></div>
+          <div class="r">昨日</div>
+        </div>
+        <div class="feed-item" data-cat="网友反应">
+          <div class="num">05</div>
+          <div><p class="tt"><a href="#feed">评论区出现集体追问</a></p><p class="dd">网友反应 · 高赞评论要求给出完整经过。</p></div>
+          <div class="r">近三日</div>
+        </div>
+        <div class="feed-item" data-cat="热度观察">
+          <div class="num">06</div>
+          <div><p class="tt"><a href="#feed">热度在澄清后回落</a></p><p class="dd">热度观察 · 补充说明发布后新增讨论减少。</p></div>
+          <div class="r">近三日</div>
+        </div>
+      </div>
+      <p class="empty" id="emptyTip">没有匹配的条目，换个关键词或点“全部”重试。</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">About</div>
+        <h2>怎么读桃花91 的爆料内容</h2>
+      </div>
+      <div class="article">
+        <div>
+          <h3>先看来源，再看结论</h3>
+          <p>吃瓜类内容的传播往往比核实更快。桃花91 在整理条目时，会尽量把原始出处、发布时间和后续回应放在一起，让读者先看到信息从哪来，再判断它站不站得住。一个说法如果只有单方转述，页面会保留“待核实”的表述，而不是替它下结论。</p>
+          <h3>把同一事件的不同版本放在一起</h3>
+          <p>同一件事常有多条线索并行：当事人说法、旁观者描述、媒体转述。单独看每一条都像完整故事，并排看才会发现时间对不上或细节冲突。桃花91 的黑料合集与线索梳理两个分区，主要就是为这种对照阅读准备的。</p>
+          <h3>热度不等于事实</h3>
+          <p>讨论量高说明关注的人多，并不自动代表内容为真。热度观察分区记录话题起落的过程，你可以从一个话题的峰值与回落点，看出哪些信息真正改变了讨论方向；也可以据此决定先看哪一条，而不必从头刷到尾。</p>
+          <p>如果你只是想在碎片时间里翻一翻最近的瓜，从爆料速览进入最快；如果想弄清一件事的来龙去脉，建议先看线索梳理里的时间线，再回到具体条目核对原文。</p>
+        </div>
+        <aside class="side">
+          <h4>浏览小建议</h4>
+          <ul>
+            <li><b>看时间：</b>同一事件优先看最新回应，旧帖只作背景。</li>
+            <li><b>看原文：</b>截图与转述容易缺上下文，尽量回到原始页面。</li>
+            <li><b>看分歧：</b>两种说法冲突处，往往是信息最值得核对的位置。</li>
+            <li><b>看范围：</b>区分“有人这样说”和“已被确认”，两者分量不同。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>桃花91</h5>
+        <p>聚合网络热门话题与吃瓜爆料的浏览站点，按分类与热度整理条目，方便快速翻看与对照阅读。</p>
+      </div>
+      <div>
+        <h5>栏目导航</h5>
+        <a href="#topics">热门话题分区</a>
+        <a href="#feed">爆料速览</a>
+        <a href="#find">关键词查找</a>
+        <a href="#about">阅读建议</a>
+      </div>
+      <div>
+        <h5>内容分类</h5>
+        <a href="#topics">圈内话题</a>
+        <a href="#topics">热点吃瓜</a>
+        <a href="#topics">黑料合集</a>
+        <a href="#topics">热度观察</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 桃花91 · 内容来自公开网络讨论的归纳整理</span>
+      <span>浏览请遵守当地法律法规，理性看待未经证实的信息</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('q');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var items = Array.prototype.slice.call(document.querySelectorAll('#resultList .feed-item'));
+  var empty = document.getElementById('emptyTip');
+  var cat = '全部';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(el){
+      var text = el.textContent.toLowerCase();
+      var okCat = (cat === '全部') || (el.getAttribute('data-cat') === cat);
+      var okKw = !kw || text.indexOf(kw) !== -1;
+      var show = okCat && okKw;
+      el.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  input.addEventListener('input', apply);
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      cat = btn.getAttribute('data-filter');
+      chips.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      apply();
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>

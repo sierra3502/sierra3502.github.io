@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>懂片帝-懂片帝影视片单_懂片帝新片速览与选片参考</title>
+<meta name="description" content="懂片帝是一个围绕影视片单与观影选择的内容站点，汇集新片速览、类型片单、经典重看与观影观点，帮助你在有限时间里找到值得一看的作品。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151a24'/%3E%3Cpath d='M16 20h32v6H16zM16 30h20v6H16zM16 40h26v6H16z' fill='%23f2c14e'/%3E%3Ccircle cx='46' cy='33' r='7' fill='none' stroke='%23f2c14e' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#151a24;
+  --ink-2:#232b3a;
+  --paper:#f6f3ec;
+  --card:#fffdf8;
+  --line:#ddd6c8;
+  --gold:#c99a2e;
+  --gold-soft:#f2e6c4;
+  --text:#2a2f3a;
+  --muted:#6a6f7b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* 页头 */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(21,26,36,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(242,193,78,.22);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;color:#f6f3ec;font-weight:700;font-size:19px;letter-spacing:.5px}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .brand-text{white-space:nowrap}
+.nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav a{
+  color:#cfd4de;font-size:14.5px;padding:7px 12px;border-radius:999px;transition:.2s;
+}
+.nav a:hover{color:var(--ink);background:var(--gold-soft)}
+.nav .nav-cta{
+  background:var(--gold);color:#191d26;font-weight:600;padding:7px 15px;
+}
+.nav .nav-cta:hover{background:#f2c14e;color:#191d26}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(242,193,78,.20),transparent 70%),
+    radial-gradient(600px 300px at 4% 110%,rgba(242,193,78,.10),transparent 70%),
+    var(--ink);
+  color:#f6f3ec;
+  padding:56px 0 60px;
+  overflow:hidden;
+}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:2px;color:var(--gold);
+  border:1px solid rgba(242,193,78,.45);
+  padding:5px 13px;border-radius:999px;margin-bottom:20px;
+}
+.hero h1{
+  font-size:clamp(34px,5vw,54px);
+  line-height:1.15;margin:0 0 18px;letter-spacing:1px;
+}
+.hero h1 .accent{color:var(--gold)}
+.hero p.lead{
+  margin:0 0 26px;color:#c7ccd7;font-size:16.5px;max-width:36em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-gold{background:var(--gold);color:#191d26}
+.btn-gold:hover{background:#f2c14e}
+.btn-ghost{border-color:rgba(246,243,236,.35);color:#f6f3ec}
+.btn-ghost:hover{background:rgba(246,243,236,.10)}
+.btn[aria-disabled="true"]{opacity:.85;pointer-events:none}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(246,243,236,.14);padding-top:20px}
+.hero-stats div strong{display:block;font-size:22px;color:var(--gold);line-height:1.2}
+.hero-stats div span{font-size:13px;color:#9aa1ae}
+
+.hero-art{
+  background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  border:1px solid rgba(242,193,78,.28);
+  border-radius:22px;padding:22px;
+}
+.hero-art figcaption{font-size:12.5px;color:#9aa1ae;margin-top:12px;text-align:center;letter-spacing:1px}
+
+/* 通用区块 */
+section{padding:58px 0}
+.section-head{margin-bottom:28px}
+.kicker{
+  font-size:13px;letter-spacing:2.5px;color:var(--gold);font-weight:700;margin:0 0 8px;
+}
+.section-head h2{
+  font-size:clamp(23px,3vw,30px);margin:0 0 10px;color:var(--ink);line-height:1.3;font-weight:700;
+}
+.section-head p{margin:0;color:var(--muted);max-width:46em}
+
+/* 新片速览 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.film-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.film-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(21,26,36,.09);border-color:#c9bd9f}
+.tag{
+  display:inline-block;font-size:12px;font-weight:600;letter-spacing:1px;
+  color:#7a5b12;background:var(--gold-soft);border-radius:999px;padding:3px 11px;align-self:flex-start;
+}
+.film-card h3{margin:0;font-size:18.5px;color:var(--ink);line-height:1.4}
+.film-card p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.7}
+.card-foot{margin-top:auto;padding-top:10px;font-size:13px;color:#8b8f99;display:flex;justify-content:space-between;gap:8px;border-top:1px dashed var(--line)}
+
+/* 片单分类 */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab-btn{
+  font:inherit;font-size:14px;cursor:pointer;
+  background:#fff;border:1px solid var(--line);color:var(--text);
+  padding:7px 16px;border-radius:999px;transition:.18s;
+}
+.tab-btn:hover{border-color:var(--gold)}
+.tab-btn[aria-pressed="true"]{background:var(--ink);color:#f6f3ec;border-color:var(--ink)}
+.list-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.list-row{
+  display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;
+  padding:18px 22px;border-bottom:1px solid var(--line);
+}
+.list-row:last-child{border-bottom:none}
+.rank{
+  font-size:20px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;
+}
+.list-row h3{margin:0 0 3px;font-size:16.5px;color:var(--ink)}
+.list-row p{margin:0;font-size:14px;color:var(--muted)}
+.score{
+  font-size:13px;color:#7a5b12;background:var(--gold-soft);border-radius:8px;padding:4px 10px;white-space:nowrap;
+}
+.empty-tip{padding:26px 22px;color:var(--muted);font-size:14.5px}
+
+/* 观点 */
+.insight{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.insight-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.insight h2{font-size:clamp(22px,3vw,28px);color:var(--ink);margin:0 0 14px;line-height:1.35}
+.insight p{color:var(--text);font-size:15.5px;margin:0 0 14px}
+.point-list{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.point-list li{
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.point-list strong{display:block;color:var(--ink);font-size:15.5px;margin-bottom:4px}
+.point-list span{font-size:14px;color:var(--muted)}
+
+/* 搜索 */
+.search-bar{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px;
+}
+.search-bar input{
+  flex:1 1 260px;min-width:0;font:inherit;font-size:15px;
+  padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);
+}
+.search-bar input:focus{outline:2px solid rgba(201,154,46,.5);outline-offset:1px;border-color:var(--gold)}
+.search-count{font-size:13.5px;color:var(--muted)}
+
+/* 订阅/尾段 */
+.closing{
+  background:var(--ink);color:#f6f3ec;border-radius:22px;padding:40px;margin:0 0 0;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;
+}
+.closing h2{margin:0 0 10px;font-size:clamp(21px,2.8vw,27px);color:#f6f3ec}
+.closing p{margin:0;color:#b9c0cc;font-size:15px;max-width:34em}
+.closing-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+
+/* 页尾 */
+.site-footer{background:#10141c;color:#9aa1ae;padding:40px 0 30px;margin-top:56px}
+.footer-inner{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#f6f3ec;font-weight:700;font-size:17px}
+.footer-brand svg{width:30px;height:30px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+.footer-links a:hover{color:var(--gold)}
+.footer-note{width:100%;border-top:1px solid rgba(255,255,255,.09);margin-top:24px;padding-top:18px;font-size:13px;line-height:1.8;color:#7d8492}
+
+/* 响应式 */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero{padding:42px 0 46px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .insight-inner{grid-template-columns:1fr;gap:26px}
+  .closing{grid-template-columns:1fr;padding:30px}
+  .closing-actions{justify-content:flex-start}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .header-inner{height:auto;flex-direction:column;align-items:flex-start;padding:12px 0;gap:10px}
+  .nav{gap:4px}
+  .nav a{font-size:13.5px;padding:6px 10px}
+  .grid-3{grid-template-columns:1fr}
+  section{padding:42px 0}
+  .list-row{grid-template-columns:40px 1fr;padding:16px 16px}
+  .list-row .score{grid-column:2;justify-self:start}
+  .hero-stats{gap:20px}
+  .site-footer{padding:32px 0 24px;margin-top:42px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="懂片帝 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#232b3a"/>
+        <path d="M16 20h32v6H16zM16 30h20v6H16zM16 40h26v6H16z" fill="#f2c14e"/>
+        <circle cx="46" cy="33" r="7" fill="none" stroke="#f2c14e" stroke-width="4"/>
+      </svg>
+      <span class="brand-text">懂片帝</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#new">新片速览</a>
+      <a href="#lists">类型片单</a>
+      <a href="#picks">选片观点</a>
+      <a href="#find">找片搜索</a>
+      <a class="nav-cta" href="#new">开始选片</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">观影选择 · 片单内容</span>
+        <h1>懂片帝</h1>
+        <p class="lead">懂片帝把“看什么”这件事讲清楚：先看近期值得留意的片子，再按类型、导演或心情挑片单，最后看几段具体的选片观点。不堆砌评分，只说明推荐理由和适合的观看场景。</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#new">浏览新片速览</a>
+          <a class="btn btn-ghost" href="#lists">查看类型片单</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4</strong><span>本周新片条目</span></div>
+          <div><strong>6</strong><span>分类片单</span></div>
+          <div><strong>3</strong><span>选片观点</span></div>
+        </div>
+      </div>
+      <figure class="hero-art" style="margin:0">
+        <svg viewBox="0 0 420 300" role="img" aria-label="懂片帝片单示意插画：胶片格与播放符号">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f2c14e" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#c99a2e" stop-opacity=".35"/>
+            </linearGradient>
+          </defs>
+          <rect x="16" y="24" width="388" height="252" rx="18" fill="#1c2230" stroke="#3a4254"/>
+          <g fill="#2b3346">
+            <rect x="40" y="48" width="70" height="52" rx="8"/>
+            <rect x="126" y="48" width="70" height="52" rx="8"/>
+            <rect x="212" y="48" width="70" height="52" rx="8"/>
+            <rect x="298" y="48" width="70" height="52" rx="8"/>
+          </g>
+          <circle cx="75" cy="74" r="11" fill="url(#g1)"/>
+          <path d="M71 68l12 6-12 6z" fill="#151a24"/>
+          <rect x="126" y="66" width="52" height="5" rx="2.5" fill="#4a5468"/>
+          <rect x="126" y="78" width="34" height="5" rx="2.5" fill="#3d465a"/>
+          <circle cx="247" cy="74" r="11" fill="none" stroke="#f2c14e" stroke-width="3"/>
+          <rect x="298" y="66" width="52" height="5" rx="2.5" fill="#4a5468"/>
+          <rect x="298" y="78" width="40" height="5" rx="2.5" fill="#3d465a"/>
+          <rect x="40" y="122" width="328" height="1.5" fill="#3a4254"/>
+          <g fill="#2b3346">
+            <rect x="40" y="142" width="200" height="12" rx="6"/>
+            <rect x="40" y="166" width="150" height="10" rx="5"/>
+            <rect x="40" y="188" width="176" height="10" rx="5"/>
+            <rect x="40" y="214" width="120" height="10" rx="5"/>
+          </g>
+          <rect x="268" y="142" width="100" height="82" rx="10" fill="#232b3a" stroke="#3a4254"/>
+          <path d="M300 168l30 15-30 15z" fill="#f2c14e"/>
+          <rect x="282" y="200" width="72" height="5" rx="2.5" fill="#4a5468"/>
+        </svg>
+        <figcaption>片单结构示意 · 新片 / 类型 / 观点</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 新片速览 -->
+  <section id="new">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">新片速览</p>
+        <h2>近期值得留意的四个条目</h2>
+        <p>这里只记录已进入公开上映或上线渠道的影片，每条给出类型、适合的观看场景和一句话理由，方便懂片帝的读者先判断要不要花这两个小时。</p>
+      </div>
+      <div class="grid-3">
+        <article class="film-card">
+          <span class="tag">剧情 / 长片</span>
+          <h3>慢节奏人物片</h3>
+          <p>对白密度低，靠环境音和长镜头推进。适合周末晚上留出完整两小时，不适合碎片时间观看。</p>
+          <div class="card-foot"><span>院线上映</span><span>适合安静场</span></div>
+        </article>
+        <article class="film-card">
+          <span class="tag">悬疑 / 类型片</span>
+          <h3>结构反转型悬疑</h3>
+          <p>前四十分钟铺垫，后半段靠信息重组完成反转。第一次看建议不看剧情简介，避免关键线索被提前说破。</p>
+          <div class="card-foot"><span>流媒体上线</span><span>建议首刷盲看</span></div>
+        </article>
+        <article class="film-card">
+          <span class="tag">纪录 / 短片集</span>
+          <h3>观察式纪录片</h3>
+          <p>没有旁白解说，观点藏在剪辑顺序里。适合想了解拍摄对象生活状态、又不希望被结论牵着走的观众。</p>
+          <div class="card-foot"><span>影展渠道</span><span>可分段观看</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 类型片单 -->
+  <section id="lists" style="background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">类型片单</p>
+        <h2>按类型与观影状态挑片</h2>
+        <p>片单不按票房排序，而是按“今晚想看什么”的动机分组。点击分类可以切换列表，每个条目都写了推荐的具体理由。</p>
+      </div>
+      <div class="tabs" role="group" aria-label="片单分类筛选">
+        <button class="tab-btn" type="button" data-cat="all" aria-pressed="true">全部</button>
+        <button class="tab-btn" type="button" data-cat="relax" aria-pressed="false">轻松解压</button>
+        <button class="tab-btn" type="button" data-cat="think" aria-pressed="false">需要动脑</button>
+        <button class="tab-btn" type="button" data-cat="classic" aria-pressed="false">经典重看</button>
+      </div>
+      <div class="list-panel" id="listPanel">
+        <div class="list-row" data-cat="relax">
+          <span class="rank">01</span>
+          <div><h3>轻喜剧日常</h3><p>节奏轻快，冲突温和，适合下班后不想再消耗注意力的时候。</p></div>
+          <span class="score">解压</span>
+        </div>
+        <div class="list-row" data-cat="think">
+          <span class="rank">02</span>
+          <div><h3>多线叙事犯罪片</h3><p>时间线交叉，人物关系需要边看边记。适合有完整专注时间、愿意回看的观众。</p></div>
+          <span class="score">动脑</span>
+        </div>
+        <div class="list-row" data-cat="classic">
+          <span class="rank">03</span>
+          <div><h3>黑白经典重看</h3><p>第二次看更容易注意到构图和光影安排，推荐用大屏、关掉字幕提示条。</p></div>
+          <span class="score">重看</span>
+        </div>
+        <div class="list-row" data-cat="relax">
+          <span class="rank">04</span>
+          <div><h3>旅行公路片</h3><p>画面开阔，情节松散，适合周末午后随手打开，不要求连续追看。</p></div>
+          <span class="score">解压</span>
+        </div>
+        <div class="list-row" data-cat="think">
+          <span class="rank">05</span>
+          <div><h3>社会议题剧情片</h3><p>讨论具体处境多于给出答案，看完适合再找一篇访谈对照着读。</p></div>
+          <span class="score">动脑</span>
+        </div>
+        <div class="list-row" data-cat="classic">
+          <span class="rank">06</span>
+          <div><h3>老片修复版</h3><p>修复后细节更清楚，但颗粒感仍在。建议先看原版再看修复版，对比差异。</p></div>
+          <span class="score">重看</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 选片观点 -->
+  <section id="picks" class="insight">
+    <div class="wrap insight-inner">
+      <div>
+        <p class="kicker">选片观点</p>
+        <h2>别让评分替你做决定</h2>
+        <p>懂片帝更愿意讲清楚“这部片适合谁”，而不是只给一个分数。同一部作品，在影院和在家、第一次看和重看，感受差别可能很大。所以我们在推荐时会写清楚观看条件和前提。</p>
+        <p>片单是一种筛选工具，不是权威榜单。读者按自己的时间和状态去挑，比照着排名一部部刷更实际。这也是懂片帝在片单里保留具体理由的原因。</p>
+      </div>
+      <ul class="point-list">
+        <li><strong>先定观看场景</strong><span>通勤、睡前和周末整块时间能承受的片长与节奏完全不同，先选场景再选片。</span></li>
+        <li><strong>警惕剧透型简介</strong><span>悬疑和反转类作品，简介写得越详细，首刷体验损失越大。</span></li>
+        <li><strong>重看也是选片方式</strong><span>熟悉的片子成本低、回报稳定，适合注意力不足的晚上。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 找片搜索 -->
+  <section id="find">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">找片搜索</p>
+        <h2>在本页片单里快速定位</h2>
+        <p>输入片名关键词、类型或观看场景，下方会实时筛选当前页面收录的条目。</p>
+      </div>
+      <div class="search-bar">
+        <input id="filmSearch" type="search" placeholder="例如：悬疑、轻喜剧、重看、公路" aria-label="搜索本页片单">
+        <span class="search-count" id="searchCount" aria-live="polite"></span>
+      </div>
+      <div class="list-panel" id="searchResults">
+        <div class="list-row" data-key="轻喜剧日常 解压 轻松 日常 喜剧"><span class="rank">01</span><div><h3>轻喜剧日常</h3><p>节奏轻快，冲突温和，适合下班后放松。</p></div><span class="score">解压</span></div>
+        <div class="list-row" data-key="多线叙事犯罪片 动脑 悬疑 犯罪 回看"><span class="rank">02</span><div><h3>多线叙事犯罪片</h3><p>时间线交叉，适合有完整专注时间。</p></div><span class="score">动脑</span></div>
+        <div class="list-row" data-key="黑白经典重看 重看 经典 构图 光影"><span class="rank">03</span><div><h3>黑白经典重看</h3><p>第二次看更容易注意到构图与光影。</p></div><span class="score">重看</span></div>
+        <div class="list-row" data-key="旅行公路片 解压 公路 旅行 松散"><span class="rank">04</span><div><h3>旅行公路片</h3><p>画面开阔，情节松散，适合周末午后。</p></div><span class="score">解压</span></div>
+        <div class="list-row" data-key="社会议题剧情片 动脑 议题 访谈"><span class="rank">05</span><div><h3>社会议题剧情片</h3><p>讨论具体处境多于给出答案。</p></div><span class="score">动脑</span></div>
+        <div class="list-row" data-key="老片修复版 重看 修复 经典 对比"><span class="rank">06</span><div><h3>老片修复版</h3><p>修复后细节清楚，建议与原版对比。</p></div><span class="score">重看</span></div>
+        <p class="empty-tip" id="emptyTip" hidden>没有匹配的条目，换个关键词试试，或清空搜索查看全部片单。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收束 -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="closing">
+        <div>
+          <h2>把下一次的观影时间用在合适的地方</h2>
+          <p>懂片帝的片单会持续补充新条目与观看前提说明。需要离线保存的片单文件，可按下方入口获取；内容仍在更新中的部分，以页面实际展示为准。</p>
+        </div>
+        <div class="closing-actions">
+          <a class="btn btn-gold" href="#lists">回到类型片单</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;border-color:rgba(246,243,236,.35);color:#f6f3ec">下载片单</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#232b3a"/>
+        <path d="M16 20h32v6H16zM16 30h20v6H16zM16 40h26v6H16z" fill="#f2c14e"/>
+        <circle cx="46" cy="33" r="7" fill="none" stroke="#f2c14e" stroke-width="4"/>
+      </svg>
+      懂片帝
+    </div>
+    <nav class="footer-links" aria-label="页尾导航">
+      <a href="#new">新片速览</a>
+      <a href="#lists">类型片单</a>
+      <a href="#picks">选片观点</a>
+      <a href="#find">找片搜索</a>
+    </nav>
+    <p class="footer-note">懂片帝是一个围绕影视片单与观影选择的内容站点。页面中的片单条目、推荐理由与分类均以公开上映或上线信息为基础，具体排播与渠道以发行方公布为准；评分与观看数量等数据如未标注来源，请以第三方平台实时信息核对。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 类型片单筛选
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#listPanel .list-row'));
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabBtns.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      var cat = btn.getAttribute('data-cat');
+      rows.forEach(function(row){
+        row.style.display = (cat === 'all' || row.getAttribute('data-cat') === cat) ? '' : 'none';
+      });
+    });
+  });
+
+  // 找片搜索
+  var input = document.getElementById('filmSearch');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#searchResults .list-row'));
+  var countEl = document.getElementById('searchCount');
+  var emptyTip = document.getElementById('emptyTip');
+
+  function render(){
+    var q = (input.value || '').trim().toLowerCase();
+    var visible = 0;
+    items.forEach(function(item){
+      var key = (item.getAttribute('data-key') || '').toLowerCase();
+      var text = item.textContent.toLowerCase();
+      var hit = !q || key.indexOf(q) > -1 || text.indexOf(q) > -1;
+      item.style.display = hit ? '' : 'none';
+      if(hit) visible++;
+    });
+    countEl.textContent = q ? ('匹配 ' + visible + ' 条') : ('共 ' + items.length + ' 条');
+    emptyTip.hidden = visible !== 0;
+  }
+  input.addEventListener('input', render);
+  render();
+})();
+</script>
+</body>
+          </html>

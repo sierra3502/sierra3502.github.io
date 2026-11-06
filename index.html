@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视工厂-影视工厂在线影视资源_影视工厂免费观看</title>
+<meta name="description" content="影视工厂聚合电影、剧集、综艺与动漫资源，提供分类浏览、搜索筛选与清晰片单入口，帮助观众快速找到想看的影视内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141823'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23e8b04b' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23e8b04b'/%3E%3Ccircle cx='32' cy='15' r='4' fill='%23e8b04b'/%3E%3Ccircle cx='32' cy='49' r='4' fill='%23e8b04b'/%3E%3Ccircle cx='15' cy='32' r='4' fill='%23e8b04b'/%3E%3Ccircle cx='49' cy='32' r='4' fill='%23e8b04b'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0f1219;
+    --bg-soft:#161b25;
+    --card:#1b2130;
+    --line:#2a3243;
+    --txt:#e9ecf2;
+    --muted:#9aa4b6;
+    --gold:#e8b04b;
+    --gold-dim:#b9873a;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,18,25,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;gap:28px;
+    height:66px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-size:1.18rem;font-weight:700;letter-spacing:.5px;
+    white-space:nowrap;
+  }
+  .logo .mark{
+    width:32px;height:32px;flex:none;
+    border-radius:9px;background:linear-gradient(145deg,#232b3c,#141822);
+    display:grid;place-items:center;
+    border:1px solid var(--line);
+  }
+  .logo .mark svg{width:20px;height:20px;}
+  .logo span{background:linear-gradient(90deg,#f3d18a,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  nav.main{display:flex;gap:22px;font-size:.94rem;color:var(--muted);}
+  nav.main a{transition:color .2s;}
+  nav.main a:hover{color:var(--gold);}
+  .nav-search{margin-left:auto;display:flex;align-items:center;gap:8px;}
+  .nav-search input{
+    width:180px;height:36px;padding:0 12px;
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;
+    color:var(--txt);font-size:.9rem;outline:none;transition:border-color .2s;
+  }
+  .nav-search input:focus{border-color:var(--gold-dim);}
+  .nav-search button{
+    height:36px;padding:0 15px;border:none;border-radius:9px;cursor:pointer;
+    background:var(--gold);color:#141822;font-weight:600;font-size:.9rem;
+    font-family:inherit;transition:filter .2s;
+  }
+  .nav-search button:hover{filter:brightness(1.08);}
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(900px 380px at 78% -10%,rgba(232,176,75,.16),transparent 62%),
+      radial-gradient(700px 320px at 10% 110%,rgba(88,120,200,.14),transparent 60%);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+    padding:64px 0 58px;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.8rem;letter-spacing:2px;color:var(--gold);
+    border:1px solid rgba(232,176,75,.35);border-radius:999px;
+    padding:4px 14px;margin-bottom:20px;
+  }
+  h1{
+    font-size:clamp(2rem,4.2vw,3rem);
+    line-height:1.22;font-weight:800;letter-spacing:1px;
+    margin-bottom:18px;
+  }
+  h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{
+    color:var(--muted);font-size:1rem;max-width:38em;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:10px;font-size:.95rem;font-weight:600;
+    transition:transform .18s,filter .18s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold);color:#141822;}
+  .btn-primary:hover{filter:brightness(1.07);}
+  .btn-ghost{border:1px solid var(--line);color:var(--txt);background:var(--bg-soft);}
+  .btn-ghost:hover{border-color:var(--gold-dim);color:var(--gold);}
+  .btn[aria-disabled="true"]{opacity:.55;pointer-events:none;}
+
+  .hero-art{
+    position:relative;
+    border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(160deg,#1c2331,#12161f);
+    padding:22px;
+    box-shadow:0 24px 60px -30px rgba(0,0,0,.9);
+  }
+  .hero-art .reel{width:100%;height:auto;}
+  .hero-art .tag{
+    margin-top:14px;display:flex;justify-content:space-between;
+    font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);
+    padding-top:12px;
+  }
+  .hero-art .tag b{color:var(--gold);font-weight:600;}
+
+  /* Section shared */
+  section{padding:56px 0;}
+  section.alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap;}
+  .sec-head h2{font-size:1.45rem;font-weight:700;letter-spacing:.5px;}
+  .sec-head h2 small{display:block;font-size:.82rem;color:var(--muted);font-weight:400;letter-spacing:1px;margin-top:6px;}
+  .sec-head .more{font-size:.86rem;color:var(--muted);}
+  .sec-head .more:hover{color:var(--gold);}
+
+  /* Category chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+  .chip{
+    padding:7px 16px;border-radius:999px;font-size:.88rem;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    cursor:pointer;font-family:inherit;transition:.2s;
+  }
+  .chip:hover{color:var(--txt);border-color:#3a465e;}
+  .chip.active{background:rgba(232,176,75,.14);border-color:var(--gold-dim);color:var(--gold);}
+
+  /* Card grid */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:transform .2s,border-color .2s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-4px);border-color:#3d4a63;}
+  .poster{
+    aspect-ratio:16/10;position:relative;
+    display:grid;place-items:center;
+    background:linear-gradient(150deg,#232c3d,#161b26);
+    border-bottom:1px solid var(--line);
+  }
+  .poster svg{width:52px;height:52px;opacity:.85;}
+  .poster .badge{
+    position:absolute;top:10px;left:10px;
+    font-size:.72rem;padding:2px 9px;border-radius:6px;
+    background:rgba(232,176,75,.16);color:var(--gold);
+    border:1px solid rgba(232,176,75,.3);letter-spacing:1px;
+  }
+  .card-body{padding:14px 16px 16px;}
+  .card-body h3{font-size:1rem;font-weight:600;margin-bottom:6px;}
+  .card-body p{font-size:.82rem;color:var(--muted);line-height:1.6;}
+  .card-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:12px;font-size:.76rem;color:#7f8a9e;
+  }
+  .card-meta .score{color:var(--gold);font-weight:600;}
+
+  /* Search / filter panel */
+  .filter-panel{
+    display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;margin-bottom:26px;
+  }
+  .filter-panel input[type="search"]{
+    height:42px;padding:0 14px;border-radius:9px;
+    background:var(--bg);border:1px solid var(--line);color:var(--txt);
+    font-size:.94rem;outline:none;font-family:inherit;width:100%;
+  }
+  .filter-panel input[type="search"]:focus{border-color:var(--gold-dim);}
+  .filter-panel select{
+    height:42px;padding:0 12px;border-radius:9px;
+    background:var(--bg);border:1px solid var(--line);color:var(--txt);
+    font-size:.9rem;font-family:inherit;outline:none;cursor:pointer;
+  }
+  .result-note{font-size:.84rem;color:var(--muted);grid-column:1/-1;}
+  .empty{
+    grid-column:1/-1;text-align:center;color:var(--muted);
+    padding:36px 0;font-size:.92rem;
+  }
+
+  /* Feature list */
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .feature{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;
+  }
+  .feature .ico{
+    width:42px;height:42px;border-radius:11px;margin-bottom:16px;
+    display:grid;place-items:center;background:rgba(232,176,75,.12);
+    border:1px solid rgba(232,176,75,.25);
+  }
+  .feature .ico svg{width:22px;height:22px;}
+  .feature h3{font-size:1.02rem;font-weight:600;margin-bottom:8px;}
+  .feature p{font-size:.88rem;color:var(--muted);}
+
+  /* Article blocks */
+  .article-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:44px;}
+  .article h2{font-size:1.45rem;margin-bottom:18px;font-weight:700;}
+  .article h3{font-size:1.05rem;margin:22px 0 8px;font-weight:600;color:var(--gold);}
+  .article p{color:#c2c9d6;font-size:.95rem;margin-bottom:12px;}
+  .aside-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .aside-card h3{font-size:1rem;margin-bottom:14px;font-weight:600;}
+  .rank-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .rank-list li{display:flex;gap:12px;align-items:baseline;font-size:.9rem;}
+  .rank-list .no{
+    font-family:ui-monospace,monospace;color:var(--gold);font-size:.82rem;
+    flex:none;width:20px;
+  }
+  .rank-list .t{color:#c8cfdc;}
+  .rank-list .t small{display:block;color:#7f8a9e;font-size:.76rem;}
+
+  /* CTA */
+  .cta{
+    text-align:center;padding:52px 20px;
+    border:1px solid var(--line);border-radius:18px;
+    background:radial-gradient(600px 200px at 50% 0%,rgba(232,176,75,.12),transparent 70%),var(--card);
+  }
+  .cta h2{font-size:1.5rem;margin-bottom:12px;}
+  .cta p{color:var(--muted);max-width:34em;margin:0 auto 24px;font-size:.94rem;}
+  .cta .hero-actions{justify-content:center;}
+
+  /* Footer */
+  footer.site{
+    border-top:1px solid var(--line);background:#0b0e14;
+    padding:40px 0 28px;font-size:.86rem;color:var(--muted);
+  }
+  .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:26px;}
+  .foot-brand{max-width:32em;}
+  .foot-brand .logo{margin-bottom:12px;}
+  .foot-links{display:flex;gap:56px;flex-wrap:wrap;}
+  .foot-links h4{font-size:.85rem;color:var(--txt);margin-bottom:12px;font-weight:600;}
+  .foot-links a{display:block;margin-bottom:8px;transition:color .2s;}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding-top:18px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:.8rem;color:#6d7789;
+  }
+
+  /* Responsive */
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;gap:36px;padding:48px 0 44px;}
+    .hero-art{max-width:460px;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .feature-grid{grid-template-columns:1fr;}
+    .article-grid{grid-template-columns:1fr;gap:32px;}
+    nav.main{display:none;}
+    .nav-search input{width:130px;}
+  }
+  @media (max-width:600px){
+    .nav-inner{height:auto;padding:12px 0;flex-wrap:wrap;gap:12px;}
+    .nav-search{margin-left:0;width:100%;}
+    .nav-search input{flex:1;width:auto;}
+    .grid{grid-template-columns:1fr;}
+    .filter-panel{grid-template-columns:1fr;gap:10px;}
+    section{padding:42px 0;}
+    h1{font-size:1.9rem;}
+    .foot-links{gap:32px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="影视工厂首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="17" fill="none" stroke="#e8b04b" stroke-width="3"/>
+          <circle cx="32" cy="32" r="5" fill="#e8b04b"/>
+          <circle cx="32" cy="15" r="4" fill="#e8b04b"/>
+          <circle cx="32" cy="49" r="4" fill="#e8b04b"/>
+          <circle cx="15" cy="32" r="4" fill="#e8b04b"/>
+          <circle cx="49" cy="32" r="4" fill="#e8b04b"/>
+        </svg>
+      </span>
+      <span>影视工厂</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#library">片库</a>
+      <a href="#filter">搜索筛选</a>
+      <a href="#feature">功能</a>
+      <a href="#guide">观看须知</a>
+      <a href="#rank">热榜</a>
+    </nav>
+    <form class="nav-search" id="navSearchForm" role="search" aria-label="站内搜索">
+      <input type="search" id="navSearchInput" placeholder="搜索片名或类型" aria-label="搜索片名或类型">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="kicker">电影 · 剧集 · 综艺 · 动漫</span>
+        <h1>影视工厂</h1>
+        <p class="lead">影视工厂把分散的影视条目归到一处：按类型进入片库，用搜索与筛选缩小范围，再看评分与简介决定今晚看什么。页面内容以片单与分类入口为主，找片比翻页更重要。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">进入片库</a>
+          <a class="btn btn-ghost" href="#filter">搜索筛选</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">下载</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="reel" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2a3448"/>
+              <stop offset="1" stop-color="#161b26"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="320" height="200" rx="12" fill="url(#g1)" stroke="#2a3243"/>
+          <g stroke="#e8b04b" stroke-width="2.4" fill="none" opacity="0.9">
+            <circle cx="88" cy="100" r="46"/>
+            <circle cx="88" cy="100" r="12" fill="#e8b04b" stroke="none"/>
+            <circle cx="88" cy="54" r="9" fill="#e8b04b" stroke="none"/>
+            <circle cx="88" cy="146" r="9" fill="#e8b04b" stroke="none"/>
+            <circle cx="42" cy="100" r="9" fill="#e8b04b" stroke="none"/>
+            <circle cx="134" cy="100" r="9" fill="#e8b04b" stroke="none"/>
+          </g>
+          <g fill="#3a465e">
+            <rect x="168" y="52" width="118" height="10" rx="5"/>
+            <rect x="168" y="80" width="90" height="10" rx="5"/>
+            <rect x="168" y="108" width="104" height="10" rx="5"/>
+            <rect x="168" y="136" width="72" height="10" rx="5"/>
+          </g>
+          <rect x="168" y="52" width="46" height="10" rx="5" fill="#e8b04b"/>
+        </svg>
+        <div class="tag"><span>片库分类</span><b>四类内容</b></div>
+        <div class="tag"><span>找片方式</span><b>搜索 · 筛选 · 榜单</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Library -->
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>片库分类<small>按内容类型进入，先看简介再决定</small></h2>
+        <a class="more" href="#filter">直接搜索 →</a>
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip active" data-cat="全部" type="button">全部</button>
+        <button class="chip" data-cat="电影" type="button">电影</button>
+        <button class="chip" data-cat="剧集" type="button">剧集</button>
+        <button class="chip" data-cat="综艺" type="button">综艺</button>
+        <button class="chip" data-cat="动漫" type="button">动漫</button>
+      </div>
+      <div class="grid" id="cardGrid"></div>
+    </div>
+  </section>
+
+  <!-- Filter -->
+  <section class="alt" id="filter">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>搜索与筛选<small>输入片名，或叠加类型与年份缩小范围</small></h2>
+      </div>
+      <div class="filter-panel">
+        <input type="search" id="filterInput" placeholder="输入片名关键词" aria-label="输入片名关键词">
+        <select id="typeSelect" aria-label="按类型筛选">
+          <option value="全部">全部类型</option>
+          <option value="电影">电影</option>
+          <option value="剧集">剧集</option>
+          <option value="综艺">综艺</option>
+          <option value="动漫">动漫</option>
+        </select>
+        <select id="yearSelect" aria-label="按年份筛选">
+          <option value="全部">全部年份</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
+        <p class="result-note" id="resultNote">共 8 条内容，可按类型或年份继续筛选。</p>
+      </div>
+      <div class="grid" id="filterGrid"></div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="feature">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影视工厂能做什么<small>围绕“找到想看的内容”设计的三件事</small></h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8b04b" stroke-width="1.8" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="16" rx="3"/>
+              <path d="M3 9h18M9 4v5M15 4v5"/>
+            </svg>
+          </div>
+          <h3>分类清晰的片库</h3>
+          <p>电影、剧集、综艺、动漫四类分开陈列，每张卡片带年份、评分与一句简介，先在列表层判断是否值得点开。</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8b04b" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+              <path d="M15.5 15.5 21 21"/>
+            </svg>
+          </div>
+          <h3>搜索加多条件筛选</h3>
+          <p>片名关键词、内容类型、上线年份可以叠加使用，筛选结果实时更新并显示条数，避免在长列表中反复翻找。</p>
+        </div>
+        <div class="feature">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8b04b" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>
+            </svg>
+          </div>
+          <h3>热榜作为兜底入口</h3>
+          <p>没有明确目标时，热榜给出一个短期参考序列，按条目热度排列，并标注类型，方便直接顺着榜单往下看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide + Rank -->
+  <section class="alt" id="guide">
+    <div class="wrap article-grid">
+      <article class="article">
+        <h2>在影视工厂找片的三步路径</h2>
+        <p>进入影视工厂后，最直接的路径是从片库开始。片库按内容类型分区，每一类下都是统一规格的卡片：标题、类型、年份、评分和一句简介。先扫简介，比逐条点开更省时间。</p>
+        <h3>第一步：先定类型</h3>
+        <p>如果只想看电影，就在类型标签里选“电影”，其余三类会被排除；如果今晚想轻松一点，综艺和动漫通常更合适。类型是影视工厂里最基本的过滤维度，也是最不容易出错的一步。</p>
+        <h3>第二步：叠加年份与关键词</h3>
+        <p>筛选面板支持片名关键词、类型、年份三项同时生效。记得片名片段就搜索，只记得大概范围就选年份。结果条数会实时显示，筛到零条时页面会给出提示，而不是留一片空白。</p>
+        <h3>第三步：参考评分与热榜</h3>
+        <p>评分是排序参考，不是唯一标准。当候选仍多时，可以回到热榜看近期被反复点开的内容。影视工厂的热榜只作为入口，具体是否合口味，仍要回到卡片简介判断。</p>
+        <p>需要说明的是，页面上的条目信息用于帮助判断与筛选，评分与热度为站内展示数值，不构成对作品质量的绝对结论。下载入口目前为占位状态，暂未开放。</p>
+      </article>
+      <aside class="aside-card" id="rank">
+        <h3>本期热榜</h3>
+        <ul class="rank-list">
+          <li><span class="no">01</span><span class="t">长夜列车<small>电影 · 2024 · 9.1</small></span></li>
+          <li><span class="no">02</span><span class="t">雾港档案<small>剧集 · 2023 · 8.8</small></span></li>
+          <li><span class="no">03</span><span class="t">星期六厨房<small>综艺 · 2024 · 8.5</small></span></li>
+          <li><span class="no">04</span><span class="t">星轨少年<small>动漫 · 2022 · 8.7</small></span></li>
+          <li><span class="no">05</span><span class="t">归途七日<small>电影 · 2021 · 8.3</small></span></li>
+          <li><span class="no">06</span><span class="t">城市回声<small>剧集 · 2024 · 8.6</small></span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>从片库开始，找到今晚的一部</h2>
+        <p>影视工厂的入口只有两类：有目标时搜索筛选，没目标时看热榜。两者都指向同一份片单，选一部，再回来继续逛。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">进入片库</a>
+          <a class="btn btn-ghost" href="#rank">查看热榜</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top" aria-label="影视工厂首页">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="17" fill="none" stroke="#e8b04b" stroke-width="3"/>
+              <circle cx="32" cy="32" r="5" fill="#e8b04b"/>
+              <circle cx="32" cy="15" r="4" fill="#e8b04b"/>
+              <circle cx="32" cy="49" r="4" fill="#e8b04b"/>
+              <circle cx="15" cy="32" r="4" fill="#e8b04b"/>
+              <circle cx="49" cy="32" r="4" fill="#e8b04b"/>
+            </svg>
+          </span>
+          <span>影视工厂</span>
+        </a>
+        <p>影视工厂以片库、搜索筛选与热榜三条路径组织影视条目，帮助访问者在短时间内完成“选片”这一步。条目信息以站内展示为准。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容</h4>
+          <a href="#library">片库分类</a>
+          <a href="#filter">搜索筛选</a>
+          <a href="#rank">本期热榜</a>
+        </div>
+        <div>
+          <h4>使用</h4>
+          <a href="#guide">找片路径</a>
+          <a href="#feature">功能说明</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 影视工厂</span>
+      <span>评分与热度为站内展示数值，下载入口暂未开放。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    {t:"长夜列车", c:"电影", y:"2024", s:"9.1", d:"一列深夜列车上的六段相遇，节奏缓慢但线索紧密。"},
+    {t:"雾港档案", c:"剧集", y:"2023", s:"8.8", d:"港口小城的旧案重启，调查线与时序交错推进。"},
+    {t:"星期六厨房", c:"综艺", y:"2024", s:"8.5", d:"每期一组嘉宾完成限时菜单，轻松向的厨房挑战。"},
+    {t:"星轨少年", c:"动漫", y:"2022", s:"8.7", d:"少年沿废弃轨道寻找失落的航线，画风明亮。"},
+    {t:"归途七日", c:"电影", y:"2021", s:"8.3", d:"七天返乡路上的家庭对话，以细节取胜。"},
+    {t:"城市回声", c:"剧集", y:"2024", s:"8.6", d:"四条人物线在同一座城市中彼此回响。"},
+    {t:"山间来信", c:"电影", y:"2022", s:"8.2", d:"一段跨越季节的书信往来，画面以自然光为主。"},
+    {t:"夜市观察", c:"综艺", y:"2021", s:"8.0", d:"跟随摊主记录夜市经营日常，偏纪实风格。"}
+  ];
+
+  var cardGrid = document.getElementById('cardGrid');
+  var filterGrid = document.getElementById('filterGrid');
+  var chips = document.querySelectorAll('.chip');
+  var filterInput = document.getElementById('filterInput');
+  var typeSelect = document.getElementById('typeSelect');
+  var yearSelect = document.getElementById('yearSelect');
+  var resultNote = document.getElementById('resultNote');
+  var currentCat = '全部';
+
+  var iconSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#e8b04b" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">'
+    + '<rect x="3" y="5" width="18" height="14" rx="2.5"/>'
+    + '<path d="M10 9.5v5l4.5-2.5z" fill="#e8b04b" stroke="none"/></svg>';
+
+  function cardHTML(it){
+    return '<article class="card">'
+      + '<div class="poster"><span class="badge">' + it.c + '</span>' + iconSVG + '</div>'
+      + '<div class="card-body"><h3>' + it.t + '</h3><p>' + it.d + '</p>'
+      + '<div class="card-meta"><span>' + it.y + ' · ' + it.c + '</span><span class="score">' + it.s + '</span></div>'
+      + '</div></article>';
+  }
+
+  function renderLibrary(){
+    var list = items.filter(function(it){ return currentCat === '全部' || it.c === currentCat; });
+    cardGrid.innerHTML = list.map(cardHTML).join('');
+  }
+
+  function renderFilter(){
+    var kw = filterInput.value.trim();
+    var ty = typeSelect.value;
+    var yr = yearSelect.value;
+    var list = items.filter(function(it){
+      var okKw = !kw || it.t.indexOf(kw) > -1 || it.d.indexOf(kw) > -1;
+      var okTy = ty === '全部' || it.c === ty;
+      var okYr = yr === '全部' || it.y === yr;
+      return okKw && okTy && okYr;
+    });
+    resultNote.textContent = '共 ' + list.length + ' 条内容' + (list.length ? '，可按类型或年份继续筛选。' : '，换个关键词或放宽条件试试。');
+    filterGrid.innerHTML = list.length ? list.map(cardHTML).join('') : '<p class="empty">没有匹配的内容，请调整关键词、类型或年份。</p>';
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.getAttribute('data-cat');
+      renderLibrary();
+    });
+  });
+
+  filterInput.addEventListener('input', renderFilter);
+  typeSelect.addEventListener('change', renderFilter);
+  yearSelect.addEventListener('change', renderFilter);
+
+  document.getElementById('navSearchForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('navSearchInput').value.trim();
+    filterInput.value = v;
+    renderFilter();
+    document.getElementById('filter').scrollIntoView({behavior:'smooth'});
+  });
+
+  renderLibrary();
+  renderFilter();
+})();
+</script>
+</body>
+                </html>
